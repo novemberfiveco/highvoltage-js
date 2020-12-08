@@ -6,17 +6,15 @@
   "repository": "git@bitbucket.org:appstrakt/nove-tool-highvoltage-js.git",
   "author": "Jan Stevens <jan.stevens@novemberfive.co>",
   "license": "MIT",
-  "private": true,
   "engines": {
     "node": ">=10.0"
   },
   "bin": {
     "highvoltage": "./bin/cli.sh"
   },
-  "type": "module",
   "files": [
     "plugins/",
-    "dangerfile.ts"
+    "dangerfile.js"
   ],
   "dependencies": {
     "@commitlint/config-angular": "^11.0.0",
