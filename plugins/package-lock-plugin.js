@@ -1,6 +1,6 @@
 const { git } = danger;
 
-export default async function packageLockPlugin() {
+exports.packageLockPlugin = async () => {
   const packageChanged = git.modified_files.includes('package.json');
   const lockfileChanged = git.modified_files.includes('yarn.lock');
   if (packageChanged && !lockfileChanged) {

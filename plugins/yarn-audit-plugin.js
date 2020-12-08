@@ -1,22 +1,8 @@
-import { exec } from 'child_process';
+const exec = require('child_process').exec;
 
-interface SummaryData {
-  vulnerabilities: {
-    info: number;
-    low: number;
-    moderate: number;
-    high: number;
-    critical: number;
-  };
-  devDependencies: number;
-  dependencies: number;
-  optionalDependencies: number;
-  totalDependencies: number;
-}
-
-const getSummary = (data: SummaryData) => {
-  const { vulnerabilities = {} as SummaryData['vulnerabilities'], totalDependencies = 0 } = data;
-  const totalVulnerabilities = Object.values(vulnerabilities).reduce<number>(
+const getSummary = (data = {}) => {
+  const { vulnerabilities = {}, totalDependencies = 0 } = data;
+  const totalVulnerabilities = Object.values(vulnerabilities).reduce(
     (total, level) => total + level,
     0,
   );
@@ -32,7 +18,7 @@ const getSummary = (data: SummaryData) => {
   }
 };
 
-const execYarnAudit = (auditCommand: string) =>
+const execYarnAudit = (auditCommand) =>
   new Promise((resolve, reject) => {
     exec(auditCommand, (error, stdout, stderr) => {
       if (stdout) {
@@ -46,11 +32,11 @@ const execYarnAudit = (auditCommand: string) =>
 
 const auditCommand = 'yarn audit --json --summary';
 
-export default async function yarnAudit() {
+exports.yarnAudit = async () => {
   try {
     const severityLine = await execYarnAudit(auditCommand);
     if (severityLine) {
-      fail(severityLine as string);
+      fail(severityLine);
     }
   } catch (err) {
     fail(`Yarn audit plugin error: ${err.message}`);

@@ -13,6 +13,7 @@
   "bin": {
     "highvoltage": "./bin/cli.sh"
   },
+  "type": "module",
   "files": [
     "plugins/",
     "dangerfile.ts"
@@ -21,7 +22,5 @@
     "danger": "^10.5.4",
     "eslint": "^6.8.0"
   },
-  "devDependencies": {
-    "typescript": "^3.9.7"
-  }
+  "devDependencies": {}
 }
