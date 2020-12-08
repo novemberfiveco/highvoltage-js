@@ -1,9 +1,10 @@
 // This will be removed at runtime
-import { schedule } from 'danger';
+import { schedule } from "danger";
 
-const eslintPlugin = require('./plugins/eslint-plugin').eslintPlugin;
-const yarnAuditPlugin = require('./plugins/yarn-audit-plugin').yarnAudit;
-const packageLockPlugin = require('./plugins/package-lock-plugin').packageLockPlugin;
+const eslintPlugin = require("./plugins/eslint-plugin").eslintPlugin;
+const yarnAuditPlugin = require("./plugins/yarn-audit-plugin").yarnAudit;
+const packageLockPlugin = require("./plugins/package-lock-plugin")
+  .packageLockPlugin;
 
 // Run ES lint
 schedule(eslintPlugin());
@@ -12,4 +13,4 @@ schedule(eslintPlugin());
 schedule(yarnAuditPlugin());
 
 // Run Package lock consitency
-schedule(packageLockPlugin())
+schedule(packageLockPlugin());
