@@ -1,4 +1,3 @@
-import { fail } from 'danger';
 import { exec } from 'child_process';
 
 interface SummaryData {

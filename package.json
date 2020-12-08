@@ -11,8 +11,12 @@
     "node": ">=10.0"
   },
   "bin": {
-    "highvoltage": "index.js"
+    "highvoltage": "./bin/cli.sh"
   },
+  "files": [
+    "plugins/",
+    "dangerfile.ts"
+  ],
   "dependencies": {
     "danger": "^10.5.4",
     "eslint": "^6.8.0"

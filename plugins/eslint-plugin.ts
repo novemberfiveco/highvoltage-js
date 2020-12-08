@@ -1,12 +1,13 @@
-import { danger, fail, message, warn } from 'danger';
 import { CLIEngine } from 'eslint';
 import * as Path from 'path';
+
+const { git } = danger;
 
 /**
  * Eslint your code with Danger, this only lints created / changed files
  */
 export default async function eslintPlugin() {
-  const filesToLint = danger.git.created_files.concat(danger.git.modified_files);
+  const filesToLint = git.created_files.concat(git.modified_files);
   // Eslint extension list only works for directories so do it ourselfs
   const filteredFiles = filesToLint.filter(file => !!file.match('(tsx|ts|js)$'));
   const cli = new CLIEngine({ useEslintrc: true });

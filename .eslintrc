@@ -1,0 +1,8 @@
+{
+  "globals": {
+    "danger": true,
+    "messsage": true,
+    "warn": true,
+    "fail": true
+  }
+}

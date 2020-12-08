@@ -1,4 +1,4 @@
-import { danger, schedule, warn } from 'danger';
+import { schedule } from 'danger';
 
 import eslintPlugin from './plugins/eslint-plugin';
 import yarnAuditPlugin from './plugins/yarn-audit-plugin';
