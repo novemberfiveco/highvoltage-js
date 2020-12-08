@@ -1,0 +1,31 @@
+{
+  "name": "@novemberfive/highvoltage-js",
+  "version": "0.1.0",
+  "description": "Highvoltage runs Danger.js for your N5 project",
+  "main": "index.js",
+  "repository": "git@bitbucket.org:appstrakt/nove-tool-highvoltage-js.git",
+  "author": "Jan Stevens <jan.stevens@novemberfive.co>",
+  "license": "MIT",
+  "private": true,
+  "engines": {
+    "node": ">=10.0"
+  },
+  "bin": {
+    "highvoltage": "./bin/cli.sh"
+  },
+  "type": "module",
+  "files": [
+    "plugins/",
+    "dangerfile.ts"
+  ],
+  "dependencies": {
+    "@commitlint/config-angular": "^11.0.0",
+    "@commitlint/config-conventional": "^11.0.0",
+    "@commitlint/lint": "^11.0.0",
+    "danger": "^10.5.4",
+    "eslint": "^6.8.0"
+  },
+  "devDependencies": {
+    "prettier": "^2.2.1"
+  }
+}

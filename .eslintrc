@@ -1,0 +1,14 @@
+{
+  "globals": {
+    "danger": true,
+    "messsage": true,
+    "warn": true,
+    "fail": true
+  },
+  "parserOptions": {
+    "ecmaVersion": 2017
+  },
+  "env": {
+    "es6": true
+  }
+}
