@@ -17,6 +17,6 @@ schedule(yarnAuditPlugin());
 // Run Package lock consitency
 schedule(packageLockPlugin());
 
-// Disable for now as it's a bit to noisy
-// const commitlintConfig = { severity: 'warn' };
-// schedule(commitlint(configAngular.rules, commitlintConfig));
+// Run commit lint based on angular config
+const commitlintConfig = { severity: 'warn' };
+schedule(commitlint(configAngular.rules, commitlintConfig));
