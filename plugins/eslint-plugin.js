@@ -32,6 +32,6 @@ exports.eslintPlugin = async () => {
   if (failed) {
     fail(`ESLint check failed, see inline comments`);
   } else {
-    message(`ESLint check success 👏 :clap:`, { icon: ":white_check_mark:" });
+    message(`ESLint check success :clap:`, { icon: ":white_check_mark:" });
   }
 };
