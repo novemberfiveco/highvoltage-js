@@ -2,7 +2,7 @@
   "name": "@novemberfive/highvoltage-js",
   "version": "0.1.0",
   "description": "Highvoltage runs Danger.js for your N5 project",
-  "main": "index.js",
+  "main": "dangerfile.js",
   "repository": "git@bitbucket.org:appstrakt/nove-tool-highvoltage-js.git",
   "author": "Jan Stevens <jan.stevens@novemberfive.co>",
   "license": "MIT",
@@ -25,5 +25,8 @@
   },
   "devDependencies": {
     "prettier": "^2.2.1"
+  },
+  "scripts": {
+    "publish:private": "npm publish --registry https://npm.novemberfive.co"
   }
 }
