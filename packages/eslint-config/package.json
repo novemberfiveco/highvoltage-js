@@ -1,7 +1,6 @@
 {
   "name": "@novemberfive/eslint-config",
   "version": "0.1.0",
-  "private": true,
   "description": "ESLint configuration used by November Five",
   "repository": {
     "type": "git",

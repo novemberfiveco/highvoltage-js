@@ -1,6 +1,5 @@
 {
   "name": "@novemberfive/highvoltage-js",
-  "private": true,
   "version": "0.2.1",
   "workspaces": [
     "packages/*"
