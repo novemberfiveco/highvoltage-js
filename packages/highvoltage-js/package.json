@@ -1,9 +1,6 @@
 {
   "name": "@novemberfive/highvoltage-js",
   "version": "0.2.6",
-  "workspaces": [
-    "packages/*"
-  ],
   "description": "Highvoltage runs Danger.js for your N5 project",
   "main": "dangerfile.js",
   "repository": {
@@ -21,7 +18,6 @@
   },
   "files": [
     "plugins/",
-    ".eslintrc.js",
     "dangerfile.js"
   ],
   "dependencies": {
