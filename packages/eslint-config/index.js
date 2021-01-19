@@ -1,6 +1,6 @@
 module.exports = {
   extends: ["react-app", "plugin:prettier/recommended"],
-  plugins: ['prettier', 'import'],
+  plugins: ['prettier', 'import', 'simple-import-sort'],
   rules: {
     "react/jsx-key": 'error',
     "@typescript-eslint/no-explicit-any": 'error',
@@ -16,5 +16,23 @@ module.exports = {
         "varsIgnorePattern": "^_"
       }
     ],
+    "simple-import-sort/sort": [
+      "warn",
+      {
+        "groups": [
+          ["^\\u0000|^react$"],
+          ["^@?\\w"],
+          ["^config"],
+          ["^[^.]"],
+          ["^assets"],
+          ["^packages"],
+          ["^utils"],
+          ["^types|^store|^services|^constants|^hooks|^theme|^connectors"],
+          ["^pages"],
+          ["^components"],
+          ["^\\."]
+        ]
+      }
+    ]
   }
 }
