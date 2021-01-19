@@ -1,6 +1,7 @@
 {
   "name": "@novemberfive/eslint-config",
   "version": "0.1.0",
+  "private": true,
   "description": "ESLint configuration used by November Five",
   "repository": {
     "type": "git",
@@ -24,5 +25,6 @@
   },
   "dependencies": {
     "confusing-browser-globals": "^1.0.9"
-  }
+  },
+  "gitHead": "a462e383a8c6cfab614d6c1436ab61010cd8e64a"
 }
