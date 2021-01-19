@@ -1,6 +1,6 @@
 {
   "name": "@novemberfive/highvoltage-js",
-  "version": "0.2.4",
+  "version": "0.2.5",
   "workspaces": [
     "packages/*"
   ],
@@ -27,7 +27,7 @@
   "dependencies": {
     "@commitlint/config-conventional": "^11.0.0",
     "@commitlint/lint": "^11.0.0",
-    "@novemberfive/eslint-config": "^0.1.3",
+    "@novemberfive/eslint-config": "^0.1.4",
     "danger": "^10.6.0",
     "eslint": "^7.5.0"
   },
