@@ -1,6 +1,6 @@
 {
   "name": "@novemberfive/highvoltage-js",
-  "version": "0.2.6",
+  "version": "0.2.7",
   "description": "Highvoltage runs Danger.js for your N5 project",
   "main": "dangerfile.js",
   "repository": {
@@ -23,7 +23,7 @@
   "dependencies": {
     "@commitlint/config-conventional": "^11.0.0",
     "@commitlint/lint": "^11.0.0",
-    "@novemberfive/eslint-config": "^0.1.5",
+    "@novemberfive/eslint-config": "^0.1.6",
     "danger": "^10.6.0",
     "eslint": "^7.5.0"
   },
