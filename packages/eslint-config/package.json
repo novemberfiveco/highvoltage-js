@@ -1,0 +1,28 @@
+{
+  "name": "@novemberfive/eslint-config",
+  "version": "0.1.0",
+  "description": "ESLint configuration used by November Five",
+  "repository": {
+    "type": "git",
+    "url": "https://bitbucket.org/appstrakt/nove-tool-highvoltage-js/src/master/",
+    "directory": "packages/eslint-config"
+  },
+  "license": "MIT",
+  "files": [
+    "index.js"
+  ],
+  "peerDependencies": {
+    "@typescript-eslint/eslint-plugin": "2.x",
+    "@typescript-eslint/parser": "2.x",
+    "babel-eslint": "10.x",
+    "eslint": "6.x",
+    "eslint-plugin-flowtype": "3.x || 4.x",
+    "eslint-plugin-import": "2.x",
+    "eslint-plugin-jsx-a11y": "6.x",
+    "eslint-plugin-react": "7.x",
+    "eslint-plugin-react-hooks": "1.x || 2.x"
+  },
+  "dependencies": {
+    "confusing-browser-globals": "^1.0.9"
+  }
+}
