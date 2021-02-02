@@ -25,7 +25,6 @@ const execYarnAudit = (auditCommand) =>
         const { data } = JSON.parse(stdout);
         resolve(getSummary(data));
       }
-      if (error !== null) reject(error);
       if (stderr !== null) reject(error);
     });
   });
@@ -39,8 +38,6 @@ exports.yarnAudit = async () => {
       warn(severityLine);
     }
   } catch (err) {
-    if (err.message) {
-      fail(`Yarn audit plugin error: ${err.message}`);
-    }
+    fail(`Yarn audit plugin error: ${err.message}`);
   }
 };
