@@ -25,7 +25,7 @@ const execYarnAudit = (auditCommand) =>
         const { data } = JSON.parse(stdout);
         resolve(getSummary(data));
       }
-      if (stderr !== null) reject(error);
+      if (stderr) reject(error);
     });
   });
 

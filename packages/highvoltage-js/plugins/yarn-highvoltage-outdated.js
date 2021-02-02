@@ -18,8 +18,8 @@ const execYarnAudit = (command) =>
         const { data } = JSON.parse(stdout.split('\n')[1]);
         resolve(getSummary(data));
       }
-      if (error !== null) reject(error);
-      if (stderr !== null) reject(stderr);
+      if (stderr) reject(stderr);
+      if (error) reject(error);
     });
   });
 
@@ -32,6 +32,6 @@ exports.highvoltageOutdated = async () => {
       warn(severityLine);
     }
   } catch (err) {
-    fail(`Yarn audit plugin error: ${err.message}`);
+    fail(`Yarn outdated plugin error: ${err.message}`);
   }
 };
