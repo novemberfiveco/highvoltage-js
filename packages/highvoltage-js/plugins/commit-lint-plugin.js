@@ -5,10 +5,8 @@ const defaultConfig = { severity: "fail" };
 const lintCommitMessage = async (commitMessage, rules, severity) => {
   return lint(commitMessage, rules).then((report) => {
     if (!report.valid) {
-      let failureMessage = `There is a problem with the commit message\n > ${commitMessage}:`;
-      report.errors.forEach((error) => {
-        failureMessage = `${failureMessage}, ${error.message}`;
-      });
+      let failureMessage = `There is a problem with the commit message: ${commitMessage}`;
+      failureMessage = `${failureMessage}--> ${report.errors.map(e => e.message).join(', ')}`;
       switch (severity) {
         case "fail":
           fail(failureMessage);
