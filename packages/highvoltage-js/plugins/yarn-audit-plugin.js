@@ -26,7 +26,7 @@ const execYarnAudit = (auditCommand) =>
         resolve(getSummary(data));
       }
       if (error !== null) reject(error);
-      if (stderr !== null) reject(stderr);
+      if (stderr !== null) reject(null);
     });
   });
 
