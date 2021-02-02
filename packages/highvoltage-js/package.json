@@ -1,6 +1,6 @@
 {
   "name": "@novemberfive/highvoltage-js",
-  "version": "0.2.13",
+  "version": "0.2.14",
   "description": "Highvoltage runs Danger.js for your N5 project",
   "main": "dangerfile.js",
   "repository": {
