@@ -22,5 +22,6 @@ schedule(packageLockPlugin());
 schedule(highvoltageOutdatedPlugin())
 
 // Run commit lint based on angular config
-const commitlintConfig = { severity: 'warn' };
-schedule(commitlint(configAngular.rules, commitlintConfig));
+// const commitlintConfig = { severity: 'warn' };
+// TODO: Only enable this again after commitizen is in line with commitlint
+//schedule(commitlint(configAngular.rules, commitlintConfig));
