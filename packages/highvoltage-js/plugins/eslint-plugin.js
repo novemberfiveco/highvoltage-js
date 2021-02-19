@@ -17,6 +17,7 @@ exports.eslintPlugin = async () => {
   const report = cli.executeOnFiles(filteredFiles);
   let failed = false;
   report.results.forEach((result) => {
+    if (cli.isPathIgnored(result.filePath)) return;
     const path = Path.relative(".", result.filePath);
     result.messages.forEach((msg) => {
       failed = true;
