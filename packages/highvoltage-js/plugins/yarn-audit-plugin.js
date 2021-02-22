@@ -1,4 +1,5 @@
 const exec = require("child_process").exec;
+const warnLevels = ['critical', 'high'];
 
 const getSummary = (data = {}) => {
   const { vulnerabilities = {}, totalDependencies = 0 } = data;
@@ -7,14 +8,23 @@ const getSummary = (data = {}) => {
     0
   );
 
-  const summary = Object.keys(vulnerabilities)
+  const relevantSummary = Object.keys(vulnerabilities)
     .map((level) => ({ level, count: vulnerabilities[level] }))
-    .filter((levelCount) => levelCount.count > 0)
+    .filter((levelCount) => levelCount.count > 0);
+
+  const highSeverity = relevantSummary.some((result) => warnLevels.includes(result.level))
+
+  const summary = relevantSummary
     .map((levelCount) => `${levelCount.count} ${levelCount.level}`)
     .join(", ");
 
   if (totalVulnerabilities > 0) {
-    return `Found ${totalVulnerabilities} vulnerabilities (${summary}) in ${totalDependencies} scanned packages`;
+    const dangerMessage = `Found ${totalVulnerabilities} vulnerabilities (${summary}) in ${totalDependencies} scanned packages`;
+    if (highSeverity) {
+      warn(dangerMessage)
+    } else {
+      message(dangerMessage)
+    }
   }
 };
 
@@ -29,14 +39,11 @@ const execYarnAudit = (auditCommand) =>
     });
   });
 
-const auditCommand = "yarn audit --json --summary";
+const auditCommand = "yarn audit --json --summary | tail -1";
 
 exports.yarnAudit = async () => {
   try {
-    const severityLine = await execYarnAudit(auditCommand);
-    if (severityLine) {
-      warn(severityLine);
-    }
+    await execYarnAudit(auditCommand);
   } catch (err) {
     fail(`Yarn audit plugin error: ${err.message}`);
   }
