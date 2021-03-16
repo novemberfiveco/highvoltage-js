@@ -1,9 +1,10 @@
 module.exports = {
-  extends: ["react-app", "plugin:prettier/recommended"],
+  extends: ["react-app", "plugin:prettier/recommended", "plugin:jest/recommended", "plugin:jest/style", "plugin:testing-library/react", "plugin:jest-dom/recommended"],
   plugins: ['prettier', 'import', 'simple-import-sort'],
   rules: {
     "react/jsx-key": 'error',
     "@typescript-eslint/no-explicit-any": 'error',
+    "@typescript-eslint/no-empty-interface": "error",
     "import/newline-after-import": ['error', { "count": 1 }],
     "no-unused-vars": 'off',
     "@typescript-eslint/no-unused-vars": [

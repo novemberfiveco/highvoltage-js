@@ -15,8 +15,11 @@
   "dependencies": {
     "eslint-config-prettier": "^6.15.0",
     "eslint-config-react-app": "5.2.1",
-    "eslint-plugin-prettier": "^3.3.1",
     "eslint-plugin-simple-import-sort": "^5.0.3",
+    "eslint-plugin-jest": "^24.3.1",
+    "eslint-plugin-jest-dom": "^3.6.5",
+    "eslint-plugin-prettier": "^3.3.1",
+    "eslint-plugin-testing-library": "^3.10.1",
     "prettier": "^1.19.1"
   },
   "gitHead": "a462e383a8c6cfab614d6c1436ab61010cd8e64a"
