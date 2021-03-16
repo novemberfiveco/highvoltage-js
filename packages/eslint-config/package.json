@@ -1,6 +1,6 @@
 {
   "name": "@novemberfive/eslint-config",
-  "version": "0.1.7",
+  "version": "0.2.0",
   "description": "ESLint configuration used by November Five",
   "repository": {
     "type": "git",
@@ -15,10 +15,10 @@
   "dependencies": {
     "eslint-config-prettier": "^6.15.0",
     "eslint-config-react-app": "5.2.1",
-    "eslint-plugin-simple-import-sort": "^5.0.3",
     "eslint-plugin-jest": "^24.3.1",
     "eslint-plugin-jest-dom": "^3.6.5",
     "eslint-plugin-prettier": "^3.3.1",
+    "eslint-plugin-simple-import-sort": "^5.0.3",
     "eslint-plugin-testing-library": "^3.10.1",
     "prettier": "^1.19.1"
   },
