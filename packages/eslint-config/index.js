@@ -34,6 +34,26 @@ module.exports = {
           ["^\\."]
         ]
       }
-    ]
-  }
+    ],
+    "@typescript-eslint/no-empty-interface": [
+      "error",
+      {
+        "allowSingleExtends": false
+      }
+    ],
+    "@typescript-eslint/array-type": [
+      "error"
+    ],
+    "@typescript-eslint/explicit-function-return-type": "off",
+    "@typescript-eslint/no-non-null-assertion": ["warn"]
+  },
+  overrides: [
+    {
+      // enable the rule specifically for TypeScript files
+      "files": ["*.ts", "*.tsx"],
+      "rules": {
+        "@typescript-eslint/explicit-function-return-type": ["warn"]
+      }
+    }
+  ]
 }
