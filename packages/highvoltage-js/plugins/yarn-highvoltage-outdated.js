@@ -15,7 +15,7 @@ const execYarnAudit = (command) =>
     exec(command, (error, stdout, stderr) => {
       if (stdout) {
         // First line contains some info, second line contains the data we need
-        const { data } = JSON.parse(stdout.split('\n')[1]);
+        const { data } = JSON.parse(stdout);
         resolve(getSummary(data));
       }
       if (stderr) reject(stderr);
@@ -23,7 +23,7 @@ const execYarnAudit = (command) =>
     });
   });
 
-const command = "yarn outdated --json @novemberfive/highvoltage-js";
+const command = "yarn outdated --json @novemberfive/highvoltage-js | tail -1";
 
 exports.highvoltageOutdated = async () => {
   try {
