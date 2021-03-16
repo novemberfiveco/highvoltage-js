@@ -8,6 +8,7 @@ const packageLockPlugin = require("./plugins/package-lock-plugin")
   .packageLockPlugin;
 const commitlint = require('./plugins/commit-lint-plugin').commitlint;
 const highvoltageOutdatedPlugin = require('./plugins/yarn-highvoltage-outdated.js').highvoltageOutdated;
+const noConsolePlugin = require('./plugins/no-console-plugin').noConsole;
 
 // Run ES lint
 schedule(eslintPlugin());
@@ -19,7 +20,10 @@ schedule(yarnAuditPlugin());
 schedule(packageLockPlugin());
 
 // Ensure highvoltage is on latest version
-schedule(highvoltageOutdatedPlugin())
+schedule(highvoltageOutdatedPlugin());
+
+// Ensure we dont have a console statement somewhere
+schedule(noConsolePlugin({ whitelist: ['error', 'warn'] }));
 
 // Run commit lint based on angular config
 // const commitlintConfig = { severity: 'warn' };
