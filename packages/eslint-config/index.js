@@ -42,18 +42,8 @@ module.exports = {
       }
     ],
     "@typescript-eslint/array-type": [
-      "error"
+      "warn"
     ],
-    "@typescript-eslint/explicit-function-return-type": "off",
     "@typescript-eslint/no-non-null-assertion": ["warn"]
-  },
-  overrides: [
-    {
-      // enable the rule specifically for TypeScript files
-      "files": ["*.ts", "*.tsx"],
-      "rules": {
-        "@typescript-eslint/explicit-function-return-type": ["warn"]
-      }
-    }
-  ]
+  }
 }
