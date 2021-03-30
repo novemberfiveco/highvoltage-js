@@ -4,8 +4,16 @@ module.exports = {
   rules: {
     "react/jsx-key": 'error',
     "@typescript-eslint/no-explicit-any": 'error',
-    "@typescript-eslint/no-empty-interface": "error",
-    "import/newline-after-import": ['error', { "count": 1 }],
+    "@typescript-eslint/no-empty-interface": [
+      "error",
+      {
+        "allowSingleExtends": false
+      }
+    ],
+    "@typescript-eslint/array-type": [
+      "warn"
+    ],
+    "@typescript-eslint/no-non-null-assertion": ["warn"],
     "no-unused-vars": 'off',
     "@typescript-eslint/no-unused-vars": [
       "warn",
@@ -17,6 +25,7 @@ module.exports = {
         "varsIgnorePattern": "^_"
       }
     ],
+    "import/newline-after-import": ['error', { "count": 1 }],
     "simple-import-sort/sort": [
       "warn",
       {
@@ -34,16 +43,6 @@ module.exports = {
           ["^\\."]
         ]
       }
-    ],
-    "@typescript-eslint/no-empty-interface": [
-      "error",
-      {
-        "allowSingleExtends": false
-      }
-    ],
-    "@typescript-eslint/array-type": [
-      "warn"
-    ],
-    "@typescript-eslint/no-non-null-assertion": ["warn"]
+    ]
   }
 }
