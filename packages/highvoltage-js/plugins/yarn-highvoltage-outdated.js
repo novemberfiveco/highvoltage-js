@@ -7,7 +7,7 @@ const getSummary = (data = {}) => {
 
   if (currentVersion === wantedVersion) return null;
 
-  return `@novemberfive/highvoltage-js is outdated (${currentVersion}) please upgrade to the latest version (${wantedVersion})`;
+  return `@novemberfiveco/highvoltage-js is outdated (${currentVersion}) please upgrade to the latest version (${wantedVersion})`;
 };
 
 const execYarnAudit = (command) =>
@@ -23,7 +23,7 @@ const execYarnAudit = (command) =>
     });
   });
 
-const command = "yarn outdated --json @novemberfive/highvoltage-js | tail -1";
+const command = "yarn outdated --json @novemberfiveco/highvoltage-js | tail -1";
 
 exports.highvoltageOutdated = async () => {
   try {

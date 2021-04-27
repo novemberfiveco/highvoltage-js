@@ -10,13 +10,13 @@ Highvoltage JS is a thin wrapper around [Danger](https://danger.systems/js/). It
 If you don't already configured the N5 NPM repository, do so first by running:
 
 ```
-npm login --scope=@novemberfive --registry=https://npm.novemberfive.co
+npm login --scope=@novemberfiveco --registry=https://npm.pkg.github.com
 ```
 
 Install Highvoltage by running:
 
 ```
-yarn add -D @novemberfive/highvoltage-js
+yarn add -D @novemberfiveco/highvoltage-js
 ```
 
 ## Batteries included

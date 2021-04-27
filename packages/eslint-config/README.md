@@ -6,11 +6,11 @@ Highvoltage eslint-config package, this is part of the lerna repo of highvoltage
 If you don't already configured the N5 NPM repository, do so first by running:
 
 ```
-npm login --scope=@novemberfive --registry=https://npm.novemberfive.co
+npm login --scope=@novemberfiveco --registry=https://npm.pkg.github.com
 ```
 
 Install Eslint Config by running:
 
 ```
-yarn add -D @novemberfive/eslint-config
+yarn add -D @novemberfiveco/eslint-config
 ```
