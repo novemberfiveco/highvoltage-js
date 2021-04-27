@@ -8,7 +8,7 @@
   "private": true,
   "command": {
     "publish": {
-      "registry": "https://npm.novemberfive.co/"
+      "registry": "https://npm.pkg.github.com"
     }
   }
 }

@@ -1,11 +1,11 @@
 {
-  "name": "@novemberfive/highvoltage-js",
+  "name": "@novemberfiveco/highvoltage-js",
   "version": "0.4.1",
   "description": "Highvoltage runs Danger.js for your N5 project",
   "main": "dangerfile.js",
   "repository": {
     "type": "git",
-    "url": "https://bitbucket.org/appstrakt/nove-tool-highvoltage-js/src/master/",
+    "url": "git://github.com/novemberfiveco/highvoltage-js.git",
     "directory": "packages/highvoltage-js"
   },
   "author": "Jan Stevens <jan.stevens@novemberfive.co>",
