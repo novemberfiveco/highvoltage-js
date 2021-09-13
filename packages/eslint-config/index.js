@@ -35,14 +35,15 @@ module.exports = {
       "warn",
       {
         "groups": [
-          ["^\\u0000|^react$"],
+          ["^\\u0000"],
+          ["^react$|^@?\\w"],
           ["^@?\\w"],
           ["^config"],
           ["^[^.]"],
           ["^assets"],
           ["^packages"],
           ["^utils"],
-          ["^types|^store|^services|^constants|^hooks|^theme|^connectors"],
+          ["^types|^store|^services|^constants|^hooks|^theme|^connectors|^queries"],
           ["^pages"],
           ["^components"],
           ["^\\."]
