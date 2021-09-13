@@ -5,7 +5,6 @@ const eslintPlugin = require("./plugins/eslint-plugin").eslintPlugin;
 const yarnAuditPlugin = require("./plugins/yarn-audit-plugin").yarnAudit;
 const packageLockPlugin = require("./plugins/package-lock-plugin")
   .packageLockPlugin;
-const commitlint = require('./plugins/commit-lint-plugin').commitlint;
 const highvoltageOutdatedPlugin = require('./plugins/yarn-highvoltage-outdated.js').highvoltageOutdated;
 const noConsolePlugin = require('./plugins/no-console-plugin').noConsole;
 
