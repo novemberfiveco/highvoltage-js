@@ -1,6 +1,5 @@
 // This will be removed at runtime
 import { schedule } from "danger";
-const configAngular = require('@commitlint/config-conventional');
 
 const eslintPlugin = require("./plugins/eslint-plugin").eslintPlugin;
 const yarnAuditPlugin = require("./plugins/yarn-audit-plugin").yarnAudit;
