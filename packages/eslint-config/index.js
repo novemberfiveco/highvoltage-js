@@ -1,7 +1,11 @@
 module.exports = {
-  extends: ["react-app", "plugin:prettier/recommended", "plugin:jest/recommended", "plugin:jest/style", "plugin:testing-library/react", "plugin:jest-dom/recommended"],
-  plugins: ['prettier', 'import', 'simple-import-sort'],
-  rules: {
+  "parserOptions": {
+    "sourceType": "module"
+  },
+  "env": { es6: true },
+  "extends": ["react-app", "plugin:prettier/recommended", "plugin:jest/recommended", "plugin:jest/style", "plugin:testing-library/react", "plugin:jest-dom/recommended"],
+  "plugins": ['prettier', 'import', 'simple-import-sort'],
+  "rules": {
     "react/jsx-key": 'error',
     "@typescript-eslint/no-explicit-any": 'error',
     "@typescript-eslint/no-empty-interface": [
@@ -15,6 +19,7 @@ module.exports = {
     ],
     "@typescript-eslint/no-non-null-assertion": ["warn"],
     "no-unused-vars": 'off',
+    "no-console": ["warn", { "allow": ["warn", "error", "info"] }],
     "@typescript-eslint/no-unused-vars": [
       "warn",
       {
@@ -26,7 +31,7 @@ module.exports = {
       }
     ],
     "import/newline-after-import": ['error', { "count": 1 }],
-    "simple-import-sort/sort": [
+    "simple-import-sort/imports": [
       "warn",
       {
         "groups": [
@@ -43,6 +48,7 @@ module.exports = {
           ["^\\."]
         ]
       }
-    ]
+    ],
+    "simple-import-sort/exports": "warn",
   }
 }
