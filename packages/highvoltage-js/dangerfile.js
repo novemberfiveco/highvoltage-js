@@ -24,8 +24,3 @@ schedule(highvoltageOutdatedPlugin());
 
 // Ensure we dont have a console statement somewhere
 schedule(noConsolePlugin({ whitelist: ['error', 'warn'] }));
-
-// Run commit lint based on angular config
-// const commitlintConfig = { severity: 'warn' };
-// TODO: Only enable this again after commitizen is in line with commitlint
-//schedule(commitlint(configAngular.rules, commitlintConfig));

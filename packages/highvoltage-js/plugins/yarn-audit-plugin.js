@@ -39,7 +39,7 @@ const execYarnAudit = (auditCommand) =>
     });
   });
 
-const auditCommand = "yarn audit --json --summary | tail -1";
+const auditCommand = "yarn audit --groups dependencies --json --summary | tail -1";
 
 exports.yarnAudit = async () => {
   try {
