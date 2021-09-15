@@ -6,6 +6,7 @@ module.exports = {
   "extends": ["react-app", "plugin:prettier/recommended", "plugin:jest/recommended", "plugin:jest/style", "plugin:testing-library/react", "plugin:jest-dom/recommended"],
   "plugins": ['prettier', 'import', 'simple-import-sort'],
   "rules": {
+    "import/no-anonymous-default-export": "off",
     "react/jsx-key": 'error',
     "@typescript-eslint/no-explicit-any": 'error',
     "@typescript-eslint/no-empty-interface": [
