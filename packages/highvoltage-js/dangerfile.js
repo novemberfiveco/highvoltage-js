@@ -6,7 +6,6 @@ const yarnAuditPlugin = require("./plugins/yarn-audit-plugin").yarnAudit;
 const packageLockPlugin = require("./plugins/package-lock-plugin")
   .packageLockPlugin;
 const highvoltageOutdatedPlugin = require('./plugins/yarn-highvoltage-outdated.js').highvoltageOutdated;
-const noConsolePlugin = require('./plugins/no-console-plugin').noConsole;
 
 // Run ES lint
 schedule(eslintPlugin());
@@ -19,6 +18,3 @@ schedule(packageLockPlugin());
 
 // Ensure highvoltage is on latest version
 schedule(highvoltageOutdatedPlugin());
-
-// Ensure we dont have a console statement somewhere
-schedule(noConsolePlugin({ whitelist: ['error', 'warn'] }));
