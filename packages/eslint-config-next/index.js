@@ -1,8 +1,13 @@
 module.exports = {
   env: { es6: true },
-  extends: ["next", "plugin:storybook/recommended"],
+  extends: [
+    "next",
+    "plugin:storybook/recommended",
+    "plugin:prettier/recommended",
+  ],
   plugins: ["prettier", "simple-import-sort", "@typescript-eslint"],
   rules: {
+    "object-curly-spacing": ["warn", "always"],
     "import/no-anonymous-default-export": "off",
     "react/jsx-key": "error",
     "@typescript-eslint/no-explicit-any": "error",

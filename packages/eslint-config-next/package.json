@@ -1,6 +1,6 @@
 {
   "name": "@novemberfiveco/eslint-config-next",
-  "version": "0.0.1",
+  "version": "0.1.1",
   "description": "ESLint configuration used by November Five",
   "main": "index.js",
   "repository": {
@@ -16,7 +16,8 @@
     "eslint-config-prettier": "^8.4.0",
     "eslint-plugin-prettier": "^4.0.0",
     "eslint-plugin-simple-import-sort": "^7.0.0",
-    "eslint-plugin-storybook": "^0.5.7"
+    "eslint-plugin-storybook": "^0.5.7",
+    "prettier": "^2.6.2"
   },
   "peerDependencies": {
     "eslint": "^7.23.0",
