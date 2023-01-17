@@ -1,12 +1,33 @@
 {
-  "private": true,
-  "workspaces": [
-    "packages/*"
-  ],
-  "devDependencies": {
-    "lerna": "^4.0.0"
+  "name": "@novemberfiveco/highvoltage-js",
+  "version": "0.6.0",
+  "description": "Highvoltage runs Danger.js for your N5 project",
+  "main": "dangerfile.js",
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/novemberfiveco/highvoltage-js.git"
   },
-  "scripts": {
-    "publish": "lerna publish --registry https://npm.pkg.github.com -y --no-verify-access"
+  "publishConfig": {
+    "registry": "https://npm.pkg.github.com"
+  },
+  "author": "Jan Stevens <jan.stevens@novemberfive.co>",
+  "license": "MIT",
+  "engines": {
+    "node": ">=10.0"
+  },
+  "bin": {
+    "highvoltage": "./bin/cli.sh"
+  },
+  "files": [
+    "plugins/",
+    "dangerfile.js",
+    "bin/"
+  ],
+  "dependencies": {
+    "danger": "10.6.6",
+    "eslint": "7.32.0"
+  },
+  "devDependencies": {
+    "prettier": "2.4.0"
   }
 }
