@@ -2,7 +2,7 @@ const exec = require("child_process").exec;
 const warnLevels = ["critical", "high"];
 
 const getSummary = (metadata = {}) => {
-  const { vulnerabilities = {}, totalDependencies = 0 } = metadata;
+  const { vulnerabilities = {}, dependencies = 0 } = metadata;
   const totalVulnerabilities = Object.values(vulnerabilities).reduce(
     (total, level) => total + level,
     0
@@ -20,7 +20,7 @@ const getSummary = (metadata = {}) => {
     .join(", ");
 
   if (totalVulnerabilities > 0) {
-    const dangerMessage = `Found ${totalVulnerabilities} vulnerabilities (${summary}) in ${totalDependencies} scanned packages`;
+    const dangerMessage = `Found ${totalVulnerabilities} vulnerabilities (${summary}) in ${dependencies.total} scanned packages`;
     if (highSeverity) {
       warn(dangerMessage);
     } else {

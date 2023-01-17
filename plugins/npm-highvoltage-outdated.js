@@ -1,6 +1,8 @@
 const exec = require("child_process").exec;
 
 const getSummary = (data = {}) => {
+  if (Object.keys(data).length === 0) return null;
+
   const { current, latest } = Object.values(data)[0];
 
   if (current === latest) return null;
