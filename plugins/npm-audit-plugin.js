@@ -44,7 +44,7 @@ const execNpmAudit = (auditCommand) => {
 };
 
 exports.npmAudit = async (options = {}) => {
-  let auditCommand = "npm audit --json";
+  let auditCommand = "npm audit --json --omit dev";
   if (options.registry) {
     auditCommand += ` --registry ${options.registry}`;
   }

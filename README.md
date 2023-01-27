@@ -67,11 +67,7 @@ npm run highvoltage pr https://bitbucket.org/appstrakt/<PROJECT NAME>/pull-reque
 
 **A**: A choice was made to use Javascript since this could run on anything that has node installed. This lowers the overall complexicy of the project and possible typescript version conflicts.
 
-**Q**: Why are you using outdated eslint v6?
-
-**A**: For the moment N5 is running on CRA3 and that has eslint pinned at v6. If we upgrade to CRA v4 this project should also be upgraded
-
-**Q**: I cannot believe you didn't add a check for *insert awesome plugin here*?!
+**Q**: I cannot believe you didn't add a check for _insert awesome plugin here_?!
 
 **A**: Feel free to create a PR with the plugin
 

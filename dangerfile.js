@@ -11,10 +11,10 @@ const highvoltageOutdatedPlugin =
 // Run ES lint
 schedule(eslintPlugin());
 
-// // Run NPM audit
+// Run NPM audit
 schedule(npmAuditPlugin());
 
-// // Run Package lock consitency
+// Run Package lock consitency
 schedule(packageLockPlugin());
 
 // Ensure highvoltage is on latest version

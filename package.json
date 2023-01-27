@@ -1,6 +1,6 @@
 {
   "name": "@novemberfiveco/highvoltage-js",
-  "version": "0.6.2",
+  "version": "0.6.9",
   "description": "Highvoltage runs Danger.js for your N5 project",
   "main": "dangerfile.js",
   "repository": {
@@ -13,7 +13,7 @@
   "author": "Jan Stevens <jan.stevens@novemberfive.co>",
   "license": "MIT",
   "engines": {
-    "node": ">=10.0"
+    "node": ">=16.13"
   },
   "bin": {
     "highvoltage": "./bin/cli.sh"
@@ -24,7 +24,7 @@
     "bin/"
   ],
   "dependencies": {
-    "danger": "10.6.6",
+    "danger": "11.2.3",
     "eslint": "7.32.0"
   },
   "devDependencies": {
