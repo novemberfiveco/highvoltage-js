@@ -25,7 +25,7 @@ const execNpmAudit = (command) =>
 
 const command = "npm outdated --json @novemberfiveco/highvoltage-js";
 
-exports.highvoltageOutdated = async () => {
+exports.highvoltageOutdatedPlugin = async () => {
   try {
     await execNpmAudit(command);
   } catch (err) {

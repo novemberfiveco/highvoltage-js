@@ -27,7 +27,8 @@ The following checks are performed in the following order
 2.  Npm Audit: Npm Audit is run and a summary is printed as a warning
 3.  Package Lock consistency: Displays a warning if `package.json` is updated but `package-lock.json` not
 4.  Highvoltage version: Npm checks if highvoltage is running on the latest version
-5.  ... your check here!
+5.  Display a message when there are open TODOs found in your PR.
+6.  ... your check here!
 
 ## Running on CI
 
