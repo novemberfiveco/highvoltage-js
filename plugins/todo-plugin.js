@@ -65,12 +65,12 @@ exports.todoPlugin = async () => {
   // output can be used to show in comments. ex: ${output.join("\n- ")}
   const output = [];
   Object.values(mergedKeywordMatches).forEach((matches) => {
-    if (matches.length) {
+    if (matches?.length) {
       output.push(...matches);
     }
   });
 
-  if (!output.length) return;
+  if (!output?.length) return;
 
   message(
     `Found open TODO's in your PR, are you sure you want to merge this? When intentional, make sure they have a clear description`,
