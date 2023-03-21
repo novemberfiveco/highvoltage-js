@@ -1,14 +1,11 @@
 {
   "name": "@novemberfiveco/highvoltage-js",
-  "version": "0.6.17",
+  "version": "0.7.0",
   "description": "Highvoltage runs Danger.js for your N5 project",
   "main": "dangerfile.js",
   "repository": {
     "type": "git",
     "url": "git://github.com/novemberfiveco/highvoltage-js.git"
-  },
-  "publishConfig": {
-    "registry": "https://npm.pkg.github.com"
   },
   "author": "Jan Stevens <jan.stevens@novemberfive.co>",
   "license": "MIT",
@@ -29,5 +26,8 @@
   },
   "devDependencies": {
     "prettier": "2.4.0"
+  },
+  "publishConfig": {
+    "access": "public"
   }
 }
