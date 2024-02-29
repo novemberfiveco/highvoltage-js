@@ -1,4 +1,4 @@
-const CLIEngine = require("eslint").CLIEngine;
+const { ESLint } = require("eslint");
 const Path = require("path");
 
 const { git } = danger;
@@ -10,13 +10,13 @@ exports.eslintPlugin = async () => {
   const filesToLint = git.created_files.concat(git.modified_files);
   // Eslint extension list only works for directories so do it ourselfs
   const filteredFiles = filesToLint.filter(
-    (file) => !!file.match("(tsx|ts|js)$")
+    (file) => !!file.match("(tsx|ts|js)$"),
   );
-  const cli = new CLIEngine({ useEslintrc: true });
+  const cli = new ESLint({ useEslintrc: true });
 
-  const report = cli.executeOnFiles(filteredFiles);
+  const results = await cli.lintFiles(filteredFiles);
   let failed = false;
-  report.results.forEach((result) => {
+  results.forEach((result) => {
     if (cli.isPathIgnored(result.filePath)) return;
     const path = Path.relative(".", result.filePath);
     result.messages.forEach((msg) => {
