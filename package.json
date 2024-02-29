@@ -33,7 +33,8 @@
     "access": "public"
   },
   "scripts": {
-    "release": "release-it"
+    "release": "release-it",
+    "format": "prettier --write ."
   },
   "release-it": {
     "git": {

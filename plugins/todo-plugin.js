@@ -5,7 +5,7 @@ const getMatches = (diffString, keyword) => {
   if (!diffString) return [];
   const regex = new RegExp(
     `(?:\\/\\/|#|<!--|;|\\/\\*|^|\\--|\\/\\*\\*\\s*\\**)\\s*${keyword}(?::\\s*|\\s+)(.+)`,
-    "gi"
+    "gi",
   );
   const matches = diffString.match(regex);
   if (!matches || !matches.length) return [];
@@ -58,7 +58,7 @@ exports.todoPlugin = async () => {
       if (!addedText) return;
 
       return prepareTodosForDanger(addedText, filepath, keywordMatches);
-    })
+    }),
   );
 
   const mergedKeywordMatches = { ...keywordMatches, ...results };
@@ -74,6 +74,6 @@ exports.todoPlugin = async () => {
 
   message(
     `Found open TODO's in your PR, are you sure you want to merge this? When intentional, make sure they have a clear description`,
-    { icon: ":construction:" }
+    { icon: ":construction:" },
   );
 };

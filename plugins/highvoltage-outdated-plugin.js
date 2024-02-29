@@ -8,7 +8,7 @@ const getSummary = (data = {}) => {
   if (current === latest) return null;
 
   warn(
-    `@novemberfiveco/highvoltage-js is outdated (${current}) please upgrade to the latest version (${latest})`
+    `@novemberfiveco/highvoltage-js is outdated (${current}) please upgrade to the latest version (${latest})`,
   );
 };
 

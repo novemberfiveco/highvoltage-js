@@ -5,14 +5,14 @@ const getSummary = (metadata = {}) => {
   const { vulnerabilities = {}, dependencies = 0 } = metadata;
   const totalVulnerabilities = Object.values(vulnerabilities).reduce(
     (total, level) => total + level,
-    0
+    0,
   );
   const relevantSummary = Object.keys(vulnerabilities)
     .map((level) => ({ level, count: vulnerabilities[level] }))
     .filter((levelCount) => levelCount.count > 0);
 
   const highSeverity = relevantSummary.some((result) =>
-    warnLevels.includes(result.level)
+    warnLevels.includes(result.level),
   );
 
   const summary = relevantSummary
