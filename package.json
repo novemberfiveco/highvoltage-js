@@ -10,7 +10,7 @@
   "author": "Jan Stevens <jan.stevens@novemberfive.co>",
   "license": "MIT",
   "engines": {
-    "node": ">=20.10"
+    "node": ">=18.18.0"
   },
   "bin": {
     "highvoltage": "./bin/cli.sh"
