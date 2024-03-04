@@ -10,7 +10,7 @@
   "author": "Jan Stevens <jan.stevens@novemberfive.co>",
   "license": "MIT",
   "engines": {
-    "node": ">=16.13"
+    "node": ">=20.10"
   },
   "bin": {
     "highvoltage": "./bin/cli.sh"
@@ -25,9 +25,9 @@
     "eslint": "8.57.0"
   },
   "devDependencies": {
-    "@release-it/conventional-changelog": "^5.1.1",
+    "@release-it/conventional-changelog": "^8.0.1",
     "prettier": "3.2.5",
-    "release-it": "^15.9.3"
+    "release-it": "^17.1.1"
   },
   "publishConfig": {
     "access": "public"
