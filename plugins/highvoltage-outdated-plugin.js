@@ -1,11 +1,14 @@
 const exec = require("child_process").exec;
+const semver = require("semver");
 
 const getSummary = (data = {}) => {
   if (Object.keys(data).length === 0) return null;
 
   const { current, latest } = Object.values(data)[0];
 
-  if (current === latest) return null;
+  if (semver.gte(current, latest)) {
+    return null;
+  }
 
   warn(
     `@novemberfiveco/highvoltage-js is outdated (${current}) please upgrade to the latest version (${latest})`,
