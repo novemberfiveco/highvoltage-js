@@ -12,14 +12,17 @@ exports.eslintPlugin = async () => {
   const filteredFiles = filesToLint.filter(
     (file) => !!file.match("(tsx|ts|js)$"),
   );
-  const cli = new ESLint({ useEslintrc: true });
+  const eslint = new ESLint();
 
-  const results = await cli.lintFiles(filteredFiles);
+  const results = await eslint.lintFiles(filteredFiles);
+
   let failed = false;
-  results.forEach((result) => {
-    if (cli.isPathIgnored(result.filePath)) return;
+
+  for (const result of results) {
+    const isPathIgnored = await eslint.isPathIgnored(result.filePath);
+    if (isPathIgnored) continue;
     const path = Path.relative(".", result.filePath);
-    result.messages.forEach((msg) => {
+    for (const msg of result.messages) {
       failed = true;
       if (msg.fatal) {
         fail(`Fatal error linting ${path} with eslint.`, path, 1);
@@ -27,8 +30,8 @@ exports.eslintPlugin = async () => {
         const fn = { 1: warn, 2: fail }[msg.severity];
         fn(`${msg.message} (${msg.ruleId})`, path, msg.line);
       }
-    });
-  });
+    }
+  }
 
   if (failed) {
     fail(`ESLint check failed, see inline comments`);

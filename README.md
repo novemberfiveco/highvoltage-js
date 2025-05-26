@@ -4,6 +4,11 @@
 
 Highvoltage JS is a thin wrapper around [Danger](https://danger.systems/js/). It allows to perform automated code review tasks on pull requests in Bitbucket. Highvoltage JS allows to have a central [danger.js](./danger.js) file.
 
+### Version Compatibility
+
+- ESLint v9 (Flat Config): Use version 2.0.0+
+- ESLint v8: Use version 1.x.x
+
 ## Getting Started
 
 Install Highvoltage by running:
