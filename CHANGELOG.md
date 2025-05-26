@@ -1,4 +1,10 @@
+# Changelog
 
+## [2.0.0](https://github.com/novemberfiveco/highvoltage-js/compare/1.0.2...2.0.0) (2025-05-26)
+
+### Features
+
+* support eslint flat config ([#7](https://github.com/novemberfiveco/highvoltage-js/issues/7)) ([2fc2a74](https://github.com/novemberfiveco/highvoltage-js/commit/2fc2a746213264a084fb87686175857268431516))
 
 ## [1.0.2](https://github.com/novemberfiveco/highvoltage-js/compare/1.0.1...1.0.2) (2024-03-04)
 
