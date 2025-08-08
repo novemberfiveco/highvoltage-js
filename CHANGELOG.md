@@ -1,5 +1,11 @@
 # Changelog
 
+## [2.0.1](https://github.com/novemberfiveco/highvoltage-js/compare/2.0.0...2.0.1) (2025-08-08)
+
+### Bug Fixes
+
+* make sure pettier uses quoted files paths to not break when folder has special chars like ( ) in the name ([d49bd08](https://github.com/novemberfiveco/highvoltage-js/commit/d49bd080497290e335aadae79cc56a0c47e8db07))
+
 ## [2.0.0](https://github.com/novemberfiveco/highvoltage-js/compare/1.0.2...2.0.0) (2025-05-26)
 
 ### Features
