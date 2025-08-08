@@ -35,9 +35,12 @@ exports.prettierPlugin = async () => {
   }
 
   try {
-    execSync(`prettier --check ${filteredFiles.join(" ")}`, {
-      encoding: "utf8",
-    });
+    execSync(
+      `prettier --check ${filteredFiles.map((file) => `"${file}"`).join(" ")}`,
+      {
+        encoding: "utf8",
+      },
+    );
     message("Prettier check success :clap:", { icon: ":white_check_mark:" });
   } catch (error) {
     const errorLines = error.stdout.split("\n");
