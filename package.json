@@ -21,14 +21,14 @@
     "bin/"
   ],
   "dependencies": {
-    "danger": "13.0.4",
-    "eslint": "9.24.0",
-    "semver": "7.7.1"
+    "danger": "^13.0.4",
+    "eslint": "^9.36.0",
+    "semver": "^7.7.2"
   },
   "devDependencies": {
-    "@release-it/conventional-changelog": "10.0.0",
-    "prettier": "3.5.3",
-    "release-it": "18.1.2"
+    "@release-it/conventional-changelog": "10.0.1",
+    "prettier": "3.6.2",
+    "release-it": "19.0.5"
   },
   "peerDependencies": {
     "eslint": ">=9.24.0 <10.0.0"
