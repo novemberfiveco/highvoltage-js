@@ -1,5 +1,15 @@
 # Changelog
 
+## [2.0.4](https://github.com/novemberfiveco/highvoltage-js/compare/2.0.0...2.0.4) (2025-10-30)
+
+### Features
+
+* dependency maintenance + don't lock dependencies ([#12](https://github.com/novemberfiveco/highvoltage-js/issues/12)) ([0614114](https://github.com/novemberfiveco/highvoltage-js/commit/0614114c671cd765e975858bc510a325e9880ddb))
+
+### Bug Fixes
+
+* make sure pettier uses quoted files paths to not break when folder has special chars like ( ) in the name ([d49bd08](https://github.com/novemberfiveco/highvoltage-js/commit/d49bd080497290e335aadae79cc56a0c47e8db07))
+
 ## [2.0.1](https://github.com/novemberfiveco/highvoltage-js/compare/2.0.0...2.0.1) (2025-08-08)
 
 ### Bug Fixes
