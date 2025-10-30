@@ -10,7 +10,9 @@
   "author": "Jan Stevens <jan.stevens@novemberfive.co>",
   "license": "MIT",
   "engines": {
-    "node": ">=18.18.0"
+    "node": ">=24.11",
+    "npm": ">= 11",
+    "yarn": "please-use-npm"
   },
   "bin": {
     "highvoltage": "./bin/cli.sh"
@@ -22,8 +24,8 @@
   ],
   "dependencies": {
     "danger": "^13.0.4",
-    "eslint": "^9.36.0",
-    "semver": "^7.7.2"
+    "eslint": "^9.38.0",
+    "semver": "^7.7.3"
   },
   "devDependencies": {
     "@release-it/conventional-changelog": "10.0.1",
