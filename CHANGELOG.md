@@ -1,5 +1,11 @@
 # Changelog
 
+## [2.0.5](https://github.com/novemberfiveco/highvoltage-js/compare/2.0.4...2.0.5) (2025-10-30)
+
+### Bug Fixes
+
+* don't enforce node 24, latest min version is node 20 ([#13](https://github.com/novemberfiveco/highvoltage-js/issues/13)) ([ef3597c](https://github.com/novemberfiveco/highvoltage-js/commit/ef3597cbd3ebeee568af705b1aab833fd9927c40))
+
 ## [2.0.4](https://github.com/novemberfiveco/highvoltage-js/compare/2.0.0...2.0.4) (2025-10-30)
 
 ### Features
