@@ -1,5 +1,7 @@
 # Changelog
 
+## [2.0.6](https://github.com/novemberfiveco/highvoltage-js/compare/2.0.5...2.0.6) (2026-03-09)
+
 ## [2.0.5](https://github.com/novemberfiveco/highvoltage-js/compare/2.0.4...2.0.5) (2025-10-30)
 
 ### Bug Fixes
