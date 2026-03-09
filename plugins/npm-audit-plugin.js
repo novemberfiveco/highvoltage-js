@@ -3,10 +3,7 @@ const warnLevels = ["critical", "high"];
 
 const getSummary = (metadata = {}) => {
   const { vulnerabilities = {}, dependencies = 0 } = metadata;
-  const totalVulnerabilities = Object.values(vulnerabilities).reduce(
-    (total, level) => total + level,
-    0,
-  );
+  const totalVulnerabilities = vulnerabilities.total || 0;
   const relevantSummary = Object.keys(vulnerabilities)
     .map((level) => ({ level, count: vulnerabilities[level] }))
     .filter((levelCount) => levelCount.count > 0);
