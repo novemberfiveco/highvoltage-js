@@ -40,14 +40,10 @@ jobs:
           git config --global user.name "${GITHUB_ACTOR}"
           git config --global user.email "${GITHUB_ACTOR}@users.noreply.github.com"
 
-      - name: NPM Credentials
-        run: npm config set //registry.npmjs.org/:_authToken $NPM_TOKEN
-        env:
-          NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
-          NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
-
       - name: Install dependencies
         run: npm ci
+        env:
+          NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
 
       - name: Release
         run: npm run release -- --ci -V --increment $TYPE_ARG $DRY_ARG
@@ -55,5 +51,4 @@ jobs:
           GITHUB_TOKEN: ${{ secrets.GH_PUSH_TOKEN }}
           TYPE_ARG: ${{ inputs.type }}
           DRY_ARG: ${{ inputs.dry == true && '--dry-run' || '' }}
-          NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
           NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
