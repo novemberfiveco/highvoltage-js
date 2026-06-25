@@ -1,4 +1,4 @@
-const { execSync } = require("child_process");
+const { execFileSync } = require("child_process");
 const Path = require("path");
 
 const { git } = danger;
@@ -36,7 +36,7 @@ exports.oxfmtPlugin = async () => {
   const filesToCheck = git.created_files.concat(git.modified_files);
   const filteredFiles = filesToCheck.filter(
     (file) =>
-      !!file.match("(tsx|ts|jsx|js|mjs|cjs|json|md|yml|yaml|css|scss|html)$"),
+      !!file.match(/\.(tsx|ts|jsx|js|mjs|cjs|json|md|yml|yaml|css|scss|html)$/),
   );
 
   if (filteredFiles.length === 0) {
@@ -44,13 +44,11 @@ exports.oxfmtPlugin = async () => {
     return;
   }
 
-  const quoted = filteredFiles.map((file) => `"${file}"`).join(" ");
-
   try {
     // --list-different prints nothing and exits 0 when everything is formatted;
     // it lists differing files and exits non-zero otherwise. We drive the
     // pass/fail decision off the exit code, not a (fragile) English string.
-    execSync(`oxfmt --list-different ${quoted}`, {
+    execFileSync("oxfmt", ["--list-different", ...filteredFiles], {
       encoding: "utf8",
       env: binEnv(),
     });

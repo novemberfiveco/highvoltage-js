@@ -1,4 +1,4 @@
-const { execSync } = require("child_process");
+const { execFileSync } = require("child_process");
 const Path = require("path");
 
 const { git } = danger;
@@ -37,7 +37,7 @@ exports.oxlintPlugin = async () => {
 
   const filesToLint = git.created_files.concat(git.modified_files);
   const filteredFiles = filesToLint.filter(
-    (file) => !!file.match("(tsx|ts|jsx|js|mjs|cjs)$"),
+    (file) => !!file.match(/\.(tsx|ts|jsx|js|mjs|cjs)$/),
   );
 
   if (filteredFiles.length === 0) {
@@ -49,10 +49,10 @@ exports.oxlintPlugin = async () => {
   let stdout = "";
   let stderr = "";
   try {
-    stdout = execSync(
-      `oxlint --format=json ${filteredFiles.map((f) => `"${f}"`).join(" ")}`,
-      { encoding: "utf8", env: binEnv() },
-    );
+    stdout = execFileSync("oxlint", ["--format=json", ...filteredFiles], {
+      encoding: "utf8",
+      env: binEnv(),
+    });
   } catch (error) {
     stdout = error.stdout || "";
     stderr = error.stderr || "";
@@ -60,7 +60,7 @@ exports.oxlintPlugin = async () => {
 
   let diagnostics = [];
   try {
-    diagnostics = JSON.parse(stdout).diagnostics || [];
+    diagnostics = JSON.parse(stdout || "{}").diagnostics || [];
   } catch (e) {
     fail(
       `oxlint produced output that could not be parsed as JSON.${stderr ? ` stderr: ${stderr.trim()}` : ""}`,
