@@ -49,13 +49,19 @@ exports.oxlintPlugin = async () => {
   let stdout = "";
   let stderr = "";
   try {
-    stdout = execFileSync("oxlint", ["--format=json", ...filteredFiles], {
+    stdout = execFileSync("oxlint", ["--format=json", "--", ...filteredFiles], {
       encoding: "utf8",
       env: binEnv(),
     });
   } catch (error) {
     stdout = error.stdout || "";
     stderr = error.stderr || "";
+    if (!stdout.trim()) {
+      fail(
+        `oxlint exited with no output.${stderr ? ` stderr: ${stderr.trim()}` : ""}`,
+      );
+      return;
+    }
   }
 
   let diagnostics = [];

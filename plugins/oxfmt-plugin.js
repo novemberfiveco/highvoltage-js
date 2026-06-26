@@ -48,7 +48,7 @@ exports.oxfmtPlugin = async () => {
     // --list-different prints nothing and exits 0 when everything is formatted;
     // it lists differing files and exits non-zero otherwise. We drive the
     // pass/fail decision off the exit code, not a (fragile) English string.
-    execFileSync("oxfmt", ["--list-different", ...filteredFiles], {
+    execFileSync("oxfmt", ["--list-different", "--", ...filteredFiles], {
       encoding: "utf8",
       env: binEnv(),
     });
