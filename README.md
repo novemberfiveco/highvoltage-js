@@ -19,15 +19,20 @@ npm install --save-dev @novemberfiveco/highvoltage-js
 
 ## Batteries included
 
-The following checks are performed in the following order
+The following checks are performed in the following order. The lint/format checks are
+config-agnostic: each one **skips automatically** when its tool isn't part of the project, so
+a repo can be on ESLint + Prettier, on oxc (oxlint + oxfmt), or mid-migration with both.
 
-1. ESLint: ESLint is run on the created / changed files only and will
-   use the projects ESLint configuration
-2. Npm Audit: Npm Audit is run and a summary is printed as a warning
-3. Package Lock consistency: Displays a warning if `package.json` is updated but `package-lock.json` not
-4. Highvoltage version: Npm checks if highvoltage is running on the latest version
-5. Display a message when there are open TODOs found in your PR.
-6. ... your check here!
+1. ESLint: run on the created / changed files only, using the project's ESLint configuration.
+   Skips automatically on projects without a resolvable ESLint config.
+2. Prettier: checks formatting of changed files. Skips automatically when `prettier` is not a project dependency.
+3. oxlint: lints created / changed files using the project's `.oxlintrc.json`. Skips automatically when `oxlint` is not a project dependency.
+4. oxfmt: checks formatting of changed files. Skips automatically when `oxfmt` is not a project dependency.
+5. Npm Audit: Npm Audit is run and a summary is printed as a warning
+6. Package Lock consistency: Displays a warning if `package.json` is updated but `package-lock.json` not
+7. Highvoltage version: Npm checks if highvoltage is running on the latest version
+8. Display a message when there are open TODOs found in your PR.
+9. ... your check here!
 
 ## Running on CI
 

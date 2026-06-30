@@ -1,5 +1,14 @@
-const { execSync } = require("child_process");
+const { execFileSync } = require("child_process");
+const Path = require("path");
+
 const { git } = danger;
+
+// Ensure the project's local node_modules/.bin is on PATH so `prettier` resolves
+// regardless of how Danger was launched.
+const binEnv = () => ({
+  ...process.env,
+  PATH: `${Path.resolve(process.cwd(), "node_modules/.bin")}${Path.delimiter}${process.env.PATH}`,
+});
 
 /**
  * Check if Prettier is installed in the project
@@ -26,7 +35,7 @@ exports.prettierPlugin = async () => {
 
   const filesToCheck = git.created_files.concat(git.modified_files);
   const filteredFiles = filesToCheck.filter(
-    (file) => !!file.match("(tsx|ts|js|json|md|yml|yaml)$"),
+    (file) => !!file.match(/\.(tsx|ts|js|json|md|yml|yaml)$/),
   );
 
   if (filteredFiles.length === 0) {
@@ -35,15 +44,13 @@ exports.prettierPlugin = async () => {
   }
 
   try {
-    execSync(
-      `prettier --check ${filteredFiles.map((file) => `"${file}"`).join(" ")}`,
-      {
-        encoding: "utf8",
-      },
-    );
+    execFileSync("prettier", ["--check", ...filteredFiles], {
+      encoding: "utf8",
+      env: binEnv(),
+    });
     message("Prettier check success :clap:", { icon: ":white_check_mark:" });
   } catch (error) {
-    const errorLines = error.stdout.split("\n");
+    const errorLines = (error.stdout || "").split("\n");
     errorLines.forEach((line) => {
       if (line.includes("Code style issues found")) {
         fail(line);

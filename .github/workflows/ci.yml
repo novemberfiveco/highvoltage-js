@@ -18,6 +18,14 @@ on:
         type: boolean
         description: Dry run release
         default: false
+      preRelease:
+        type: choice
+        description: "Prerelease channel (none = stable latest tag)"
+        options:
+          - none
+          - beta
+        required: true
+        default: none
 
 jobs:
   publish:
@@ -50,10 +58,11 @@ jobs:
         run: npm ci
 
       - name: Release
-        run: npm run release -- --ci -V --increment $TYPE_ARG $DRY_ARG
+        run: npm run release -- --ci -V --increment $TYPE_ARG $PRE_ARG $DRY_ARG
         env:
           GITHUB_TOKEN: ${{ secrets.GH_PUSH_TOKEN }}
           TYPE_ARG: ${{ inputs.type }}
+          PRE_ARG: ${{ inputs.preRelease == 'beta' && '--preRelease=beta' || '' }}
           DRY_ARG: ${{ inputs.dry == true && '--dry-run' || '' }}
           NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
           NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
