@@ -43,6 +43,9 @@
     "format": "prettier --write ."
   },
   "release-it": {
+    "npm": {
+      "skipChecks": true
+    },
     "git": {
       "commitMessage": "chore: release v${version}"
     },
