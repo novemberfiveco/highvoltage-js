@@ -1,5 +1,11 @@
 # Changelog
 
+## [2.1.0-beta.0](https://github.com/novemberfiveco/highvoltage-js/compare/2.0.6...2.1.0-beta.0) (2026-06-30)
+
+### Features
+
+* oxc (oxlint + oxfmt) support + graceful ESLint skip on config-less repos ([#16](https://github.com/novemberfiveco/highvoltage-js/issues/16)) ([dc8c538](https://github.com/novemberfiveco/highvoltage-js/commit/dc8c538ac8e67135738e1b10a2b9b663019f1c12))
+
 ## [2.0.6](https://github.com/novemberfiveco/highvoltage-js/compare/2.0.5...2.0.6) (2026-03-09)
 
 ## [2.0.5](https://github.com/novemberfiveco/highvoltage-js/compare/2.0.4...2.0.5) (2025-10-30)
