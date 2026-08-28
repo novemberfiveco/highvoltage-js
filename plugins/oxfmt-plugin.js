@@ -1,5 +1,6 @@
 const { execFileSync } = require("child_process");
 const Path = require("path");
+const { toLocalPaths } = require("./utils/changed-files");
 
 const { git } = danger;
 
@@ -34,9 +35,13 @@ exports.oxfmtPlugin = async () => {
   }
 
   const filesToCheck = git.created_files.concat(git.modified_files);
-  const filteredFiles = filesToCheck.filter(
-    (file) =>
-      !!file.match(/\.(tsx|ts|jsx|js|mjs|cjs|json|md|yml|yaml|css|scss|html)$/),
+  const filteredFiles = toLocalPaths(
+    filesToCheck.filter(
+      (file) =>
+        !!file.match(
+          /\.(tsx|ts|jsx|js|mjs|cjs|json|md|yml|yaml|css|scss|html)$/,
+        ),
+    ),
   );
 
   if (filteredFiles.length === 0) {

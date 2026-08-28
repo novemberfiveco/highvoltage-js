@@ -1,5 +1,6 @@
 const { execFileSync } = require("child_process");
 const Path = require("path");
+const { toLocalPaths } = require("./utils/changed-files");
 
 const { git } = danger;
 
@@ -36,8 +37,8 @@ exports.oxlintPlugin = async () => {
   }
 
   const filesToLint = git.created_files.concat(git.modified_files);
-  const filteredFiles = filesToLint.filter(
-    (file) => !!file.match(/\.(tsx|ts|jsx|js|mjs|cjs)$/),
+  const filteredFiles = toLocalPaths(
+    filesToLint.filter((file) => !!file.match(/\.(tsx|ts|jsx|js|mjs|cjs)$/)),
   );
 
   if (filteredFiles.length === 0) {
