@@ -1,5 +1,11 @@
 # Changelog
 
+## [2.2.0](https://github.com/novemberfiveco/highvoltage-js/compare/2.1.1-beta.0...2.2.0) (2026-08-28)
+
+### Bug Fixes
+
+* resolve changed-file paths relative to the running package ([c641fcc](https://github.com/novemberfiveco/highvoltage-js/commit/c641fcc6fb4507c53bd3f25cfc14e1e8921d1600))
+
 ## [2.1.1-beta.0](https://github.com/novemberfiveco/highvoltage-js/compare/2.1.0-beta.0...2.1.1-beta.0) (2026-06-30)
 
 ## [2.1.0-beta.0](https://github.com/novemberfiveco/highvoltage-js/compare/2.0.6...2.1.0-beta.0) (2026-06-30)
