@@ -1,5 +1,6 @@
 const { execFileSync } = require("child_process");
 const Path = require("path");
+const { toLocalPaths } = require("./utils/changed-files");
 
 const { git } = danger;
 
@@ -34,8 +35,10 @@ exports.prettierPlugin = async () => {
   }
 
   const filesToCheck = git.created_files.concat(git.modified_files);
-  const filteredFiles = filesToCheck.filter(
-    (file) => !!file.match(/\.(tsx|ts|js|json|md|yml|yaml)$/),
+  const filteredFiles = toLocalPaths(
+    filesToCheck.filter(
+      (file) => !!file.match(/\.(tsx|ts|js|json|md|yml|yaml)$/),
+    ),
   );
 
   if (filteredFiles.length === 0) {

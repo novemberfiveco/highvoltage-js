@@ -46,6 +46,22 @@ npm run highvoltage
 
 ```
 
+### Monorepos
+
+Highvoltage can run from a sub-package of a larger repository — for example a
+`frontend/` package sitting next to a `serverless/` one. Run it from the package
+directory as usual:
+
+```
+cd frontend && npm run highvoltage
+```
+
+Danger reports changed files relative to the _repository root_, so the checks
+rebase those paths onto the directory they run in. Files belonging to sibling
+packages are ignored, so each package is only ever checked against its own
+config. Nothing changes for single-package repositories, where the two
+directories are the same.
+
 ## Local Development
 
 The easiest way for local development is creating a PR in bitbucket on a project to test out your code, then you can use the following command to run Highvoltage locally. This will perform the same checks as on CI but wont place any comments on the PR.

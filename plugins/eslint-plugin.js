@@ -1,5 +1,6 @@
 const { ESLint } = require("eslint");
 const Path = require("path");
+const { toLocalPaths } = require("./utils/changed-files");
 
 const { git } = danger;
 
@@ -19,8 +20,8 @@ const isMissingConfigError = (error) =>
 exports.eslintPlugin = async () => {
   const filesToLint = git.created_files.concat(git.modified_files);
   // Eslint extension list only works for directories so do it ourselfs
-  const filteredFiles = filesToLint.filter(
-    (file) => !!file.match(/\.(tsx|ts|js)$/),
+  const filteredFiles = toLocalPaths(
+    filesToLint.filter((file) => !!file.match(/\.(tsx|ts|js)$/)),
   );
 
   if (filteredFiles.length === 0) {
